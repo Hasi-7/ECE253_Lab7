@@ -5,14 +5,14 @@
 _start:
     la s2, LIST # Load the memory address into s2
     lw s3, 0(s2)
-    addi s4, zero, 0 # Register s4 will hold the current max count
-    addi t0, zero, -1 # Sentinel Value
+    addi s10, zero, 0 # Register s10 will hold the current max count
+    addi s7, zero, -1 # Sentinel Value
 
     LOOP1:
-    beq s3, t0, ENDLOOP1
+    beq s3, s7, ENDLOOP1
     jal ONESCOUNT
-    bge s4, a0, KEEPMAX
-    mv s4, a0
+    bge s10, a0, KEEPMAX
+    mv s10, a0
     KEEPMAX:
     addi s2, s2, 4
     lw s3, 0(s2)
@@ -24,7 +24,7 @@ ONESCOUNT:
     addi a0, zero, 0 # Hold count for this word
     addi a2, zero, 0
     add a2, a2, s2
-    addi a3, zero 0
+    addi a3, zero, 0
     add a3, a3, s3
 
     LOOP2:

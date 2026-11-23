@@ -21,6 +21,8 @@ Call Subroutine SWAP
 
 Index s2 forward by 1 and s3 forward by 1 (Use s5 to "multiply by 4" to know how many bytes to increment. Can shift left by 2 to multiply value by 4 "slli t0, s5, 2": t0 = s5 * 4)
 
+THIS IS NEW: INDEX FORWARD IS DONE AT THE START OF THE LOOP WHEN LOAD WORD IS DONE
+
 Branch if a0 is equal to 0 to LOOP 1.
 
 
